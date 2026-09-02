@@ -103,126 +103,150 @@ CREATE TABLE Table_Name (
 );
 ```
 
-**Question 1**
---
--- Paste Question 1 here
+## Question 1:
+```
+CREATE TABLE STUDENT (
+    STUDENT_ID NUMBER(5),
+    NAME VARCHAR2(30),
+    DEPARTMENT VARCHAR2(20),
+    MARKS NUMBER(3)
+);
 
-```sql
--- Paste your SQL code below for Question 1
+DESC STUDENT;
+```
+## Output:
+<img width="973" height="227" alt="image" src="https://github.com/user-attachments/assets/8d5b7209-957a-4a61-8e18-18f8e358f009" />
+
+## Question 2:
+```
+ALTER TABLE STUDENT
+ADD (ADDRESS VARCHAR2(30));
+
+DESC STUDENT;
 ```
 
-**Output:**
+## Output:
+<img width="957" height="371" alt="image" src="https://github.com/user-attachments/assets/23e6c2ea-4042-4e9b-9c93-a1cad3c67831" />
 
-![Output1](output.png)
+## Question 3:
+```
+ALTER TABLE STUDENT
+MODIFY (NAME VARCHAR2(50));
 
-**Question 2**
----
--- Paste Question 2 here
+DESC STUDENT;
+```
+## Output:
+<img width="987" height="235" alt="image" src="https://github.com/user-attachments/assets/46a5c57b-eae2-4685-abb0-04524f764cb2" />
 
-```sql
--- Paste your SQL code below for Question 2
+## Question 4:
+```
+ALTER TABLE STUDENT
+DROP COLUMN ADDRESS;
+
+DESC STUDENT;
 ```
 
-**Output:**
+## Output:
+<img width="990" height="378" alt="image" src="https://github.com/user-attachments/assets/94e8a159-1a2c-47fc-8466-254e167c6e22" />
 
-![Output2](output.png)
+## Question 5:
+```
+ALTER TABLE STUDENT
+RENAME COLUMN NAME TO STUDENT_NAME;
 
-**Question 3**
----
--- Paste Question 3 here
-
-```sql
--- Paste your SQL code below for Question 3
+DESC STUDENT;
 ```
 
-**Output:**
+## Output:
+<img width="960" height="205" alt="image" src="https://github.com/user-attachments/assets/d7403efd-37a1-4f69-8a4a-c464e346fb47" />
 
-![Output3](output.png)
+## Question 6:
+```
+CREATE TABLE EMPLOYEE (
+    EMP_ID NUMBER(5) PRIMARY KEY,
+    EMP_NAME VARCHAR2(30) NOT NULL,
+    SALARY NUMBER(8,2)
+);
 
-**Question 4**
----
--- Paste Question 4 here
-
-```sql
--- Paste your SQL code below for Question 4
+DESC EMPLOYEE;
 ```
 
-**Output:**
+## Output:
+<img width="972" height="377" alt="image" src="https://github.com/user-attachments/assets/15ed40b5-588f-4fc6-b743-93e768f73d2d" />
 
-![Output4](output.png)
+## Question 7:
+```
+CREATE TABLE COURSE (
+    COURSE_ID NUMBER(5) PRIMARY KEY,
+    COURSE_NAME VARCHAR2(30) UNIQUE,
+    DURATION NUMBER(2) CHECK (DURATION > 0)
+);
 
-**Question 5**
----
--- Paste Question 5 here
+DESC COURSE;
+INSERT INTO COURSE VALUES (101, 'Python', 6);
+INSERT INTO COURSE VALUES (102, 'Java', 4);
 
-```sql
--- Paste your SQL code below for Question 5
+SELECT * FROM COURSE;
 ```
 
-**Output:**
+## Output:
+<img width="992" height="352" alt="image" src="https://github.com/user-attachments/assets/e5c950e4-7582-4f7c-863c-ffcad34c88ac" />
 
-![Output5](output.png)
 
-**Question 6**
----
--- Paste Question 6 here
+## Question 8:
+```
+CREATE TABLE DEPARTMENT (
+    DEPT_ID NUMBER(3) PRIMARY KEY,
+    DEPT_NAME VARCHAR2(30)
+);
 
-```sql
--- Paste your SQL code below for Question 6
+CREATE TABLE STUDENT_DEPT (
+    STUDENT_ID NUMBER(5) PRIMARY KEY,
+    STUDENT_NAME VARCHAR2(30),
+    DEPT_ID NUMBER(3),
+    FOREIGN KEY (DEPT_ID) REFERENCES DEPARTMENT(DEPT_ID)
+);
+
+DESC STUDENT_DEPT;
 ```
 
-**Output:**
+## Output:
+<img width="932" height="392" alt="image" src="https://github.com/user-attachments/assets/dee7670f-d1bc-4f71-8a4f-b623e2f9493f" />
 
-![Output6](output.png)
+## Question 9:
+```
+CREATE TABLE CUSTOMER (
+    CUSTOMER_ID NUMBER(5) PRIMARY KEY,
+    CUSTOMER_NAME VARCHAR2(30) NOT NULL,
+    CITY VARCHAR2(20) DEFAULT 'Chennai'
+);
 
-**Question 7**
----
--- Paste Question 7 here
+INSERT INTO CUSTOMER (CUSTOMER_ID, CUSTOMER_NAME)
+VALUES (101, 'Ravi');
 
-```sql
--- Paste your SQL code below for Question 7
+SELECT * FROM CUSTOMER;
 ```
 
-**Output:**
+## Output:
+<img width="992" height="417" alt="image" src="https://github.com/user-attachments/assets/85f267e3-3043-47b4-99c7-ba699d6cf08a" />
 
-![Output7](output.png)
+## Question 10:
+```
+CREATE TABLE TEMP_STUDENT (
+    ID NUMBER(5),
+    NAME VARCHAR2(30)
+);
 
-**Question 8**
----
--- Paste Question 8 here
+RENAME TEMP_STUDENT TO STUDENT_DETAILS;
 
-```sql
--- Paste your SQL code below for Question 8
+DESC STUDENT_DETAILS;
+
+DROP TABLE STUDENT_DETAILS;
 ```
 
-**Output:**
+## Output:
 
-![Output8](output.png)
-
-**Question 9**
----
--- Paste Question 9 here
-
-```sql
--- Paste your SQL code below for Question 9
-```
-
-**Output:**
-
-![Output9](output.png)
-
-**Question 10**
----
--- Paste Question 10 here
-
-```sql
--- Paste your SQL code below for Question 10
-```
-
-**Output:**
-
-![Output10](output.png)
-
+<img width="962" height="392" alt="image" src="https://github.com/user-attachments/assets/acd6528f-8bc8-4937-b1cb-964e194881d9" />
 
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
