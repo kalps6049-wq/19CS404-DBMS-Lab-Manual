@@ -36,10 +36,9 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 
 ### Assumptions
-- 
-- 
-- 
-
+- Each session involves exactly one trainer and one member.
+- Programs are predefined (Yoga, Zumba, Weight Training, etc.).
+- Payments are only for membership or session bookings.
 ---
 
 # Scenario B: City Library Event & Book Lending System
