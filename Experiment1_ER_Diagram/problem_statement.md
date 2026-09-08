@@ -70,9 +70,9 @@ The Central Library wants to manage book lending and cultural events.
 
 
 ### Assumptions
-- 
-- 
-- 
+- Books can be borrowed multiple times by different Members.
+- Each Event happens in one Room at a specific time.
+- A Speaker can participate in multiple Events.
 
 ---
 
