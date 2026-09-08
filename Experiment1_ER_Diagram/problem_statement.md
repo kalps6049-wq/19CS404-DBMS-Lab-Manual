@@ -105,10 +105,9 @@ A popular restaurant wants to manage reservations, orders, and billing.
 
 
 ### Assumptions
-- 
-- 
-- 
-
+- One reservation uses one table and one waiter.
+- Bill is generated automatically after service.
+- Customer details stored for every reservation.
 ---
 
 ## Instructions for Students
